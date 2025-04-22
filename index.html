@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Scheda Escursioni</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+    input { width: 100%; border: none; background: transparent; }
+    .controls { margin-top: 20px; }
+    button { padding: 10px 20px; margin-right: 10px; font-size: 14px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h2>Scheda Escursioni</h2>
+
+  <label>Nome Assistente: <input type="text" id="assistente" /></label><br><br>
+  <label>Data: <input type="date" id="data" /></label><br><br>
+
+  <table id="tabella">
+    <thead>
+      <tr>
+        <th>Data escursione</th>
+        <th>Voucher</th>
+        <th>Escursione</th>
+        <th>Nome Cliente</th>
+        <th>Pax</th>
+        <th>Costo Unitario</th>
+        <th>Totale</th>
+        <th>Metodo Pagamento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 10 righe vuote -->
+      <tr><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td></tr>
+<tr><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td></tr>
+<tr><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td></tr>
+<tr><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td></tr>
+<tr><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td></tr>
+<tr><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td></tr>
+<tr><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td></tr>
+<tr><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td></tr>
+<tr><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td></tr>
+<tr><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td><td><input type='text'></td></tr>
+    </tbody>
+  </table>
+
+  <div class="controls">
+    <button onclick="resetta()">Resetta tutto</button>
+    <button onclick="generaPDF()">Genera PDF</button>
+  </div>
+
+  <script>
+    function resetta() {
+      document.getElementById("assistente").value = "";
+      document.getElementById("data").value = "";
+      document.querySelectorAll("tbody input").forEach(input => input.value = "");
+    }
+
+    function generaPDF() {
+      window.print(); // soluzione semplice compatibile mobile
+    }
+  </script>
+</body>
+</html>
